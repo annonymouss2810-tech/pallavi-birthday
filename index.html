@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pallavi's Birthday ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family: 'Segoe UI';
+background:linear-gradient(135deg,#1a0033,#0a0f3c);
+color:white;
+text-align:center;
+overflow:hidden;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container{
+width:90%;
+max-width:400px;
+}
+
+h1{
+font-size:28px;
+}
+
+.countdown{
+font-size:35px;
+margin-top:10px;
+letter-spacing:2px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4b91,#ff7eb3);
+color:white;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+}
+
+.card{
+background:white;
+color:#333;
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+line-height:1.6;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="countPage">
+
+<h1>Someone crafted something magical for</h1>
+
+<h1 style="color:#ff7eb3">Pallavi ❤️</h1>
+
+<div class="countdown" id="timer"></div>
+
+<button onclick="openGift()">Can't wait? Peek now 💌</button>
+
+</div>
+
+
+<div id="giftPage" class="hidden">
+
+<h1>I made something special for you 🐰</h1>
+
+<button onclick="openLetter()">Open My Heart 💖</button>
+
+</div>
+
+
+<div id="letterPage" class="hidden">
+
+<div class="card">
+
+<h2>Dear Pallavi ❤️</h2>
+
+<p>
+
+Happy 24th Birthday to the most beautiful girl in my life 🎂
+
+You are the reason my world feels brighter every single day.
+
+Your smile, your voice, your kindness… everything about you makes my life special.
+
+I feel so lucky to have you.
+
+</p>
+
+<p>
+
+Thank you for loving me, supporting me, and making every moment magical.
+
+I promise to always care for you, stand by your side, and create beautiful memories together.
+
+</p>
+
+<p>
+
+May your life always be filled with happiness, dreams, and endless love.
+
+</p>
+
+<h3>I Love You Forever ❤️</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+var countDownDate = new Date("Mar 9, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+
+var distance = countDownDate - now;
+
+var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+var seconds = Math.floor((distance % (1000*60))/1000);
+
+document.getElementById("timer").innerHTML = hours+"h : "+minutes+"m : "+seconds+"s";
+
+},1000);
+
+
+function openGift(){
+document.getElementById("countPage").style.display="none";
+document.getElementById("giftPage").style.display="block";
+}
+
+function openLetter(){
+document.getElementById("giftPage").style.display="none";
+document.getElementById("letterPage").style.display="block";
+}
+
+for(let i=0;i<40;i++){
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
